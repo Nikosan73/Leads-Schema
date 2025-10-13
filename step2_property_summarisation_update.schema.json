@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/<org>/<repo>/main/step2_property_summarisation_update.schema.json",
+  "title": "UK Property Summarisation → Database JSON Update (Step 2)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "street_1",
+    "street_2",
+    "city",
+    "region",
+    "postal_code",
+    "proposed_opportunity_name",
+    "property_type",
+    "proposed_use",
+    "project_type",
+    "tenure",
+    "offer_type",
+    "footprint_acres",
+    "existing_private_units",
+    "existing_affordable_units",
+    "existing_commercial_gia_sqft",
+    "existing_commercial_nia_sqft",
+    "proposed_private_units",
+    "proposed_affordable_units",
+    "proposed_resi_gia_sqft",
+    "proposed_resi_nia_sqft",
+    "proposed_commercial_gia_sqft",
+    "proposed_commercial_nia_sqft",
+    "existing_resi_gia_sqft",
+    "existing_resi_nia_sqft",
+    "price",
+    "rough_cut_per_sqft",
+    "agent",
+    "agent_company",
+    "auction",
+    "auction_date",
+    "auction_lot_number",
+    "lpa",
+    "epc_grade",
+    "epc_score",
+    "council_charity_disposal",
+    "receivership"
+  ],
+  "properties": {
+    "street_1": { "type": ["string", "null"], "description": "Primary street address or building name (no abbreviations)." },
+    "street_2": { "type": ["string", "null"], "description": "Secondary address line (block/estate/etc.)." },
+    "city": { "type": ["string", "null"], "description": "City/town or London district." },
+    "region": { "type": ["string", "null"], "description": "County or London Borough." },
+    "postal_code": { "type": ["string", "null"], "description": "Full UK postcode." },
+
+    "proposed_opportunity_name": { "type": ["string", "null"], "description": "Building name/number + full street + town (strict rule)." },
+
+    "property_type": {
+      "type": ["string", "null"],
+      "description": "Current property type.",
+      "enum": ["Office", "Residential", "Land", "Hotel", "Retail", "HMO", "Other", "Industrial", "Pub", "Air Space", "Part Built", "Care Home", "GP Surgery", "Community Use", "Mixed Use", "Petrol Station", "Garages", "Hospital", "TBC", null]
+    },
+    "proposed_use": { "type": ["string", "null"], "description": "Intended use / conversion type if known." },
+    "project_type": {
+      "type": ["string", "null"],
+      "description": "Nature of project.",
+      "enum": ["Construction", "Refurbishment", "Regeneration", "Investment", "Planning", "Turn", "Break Up", "TBC", null]
+    },
+    "tenure": {
+      "type": ["string", "null"],
+      "description": "Legal tenure.",
+      "enum": ["Freehold", "Virtual Freehold", "Leasehold", "Part FH/LH", "TBC", null]
+    },
+    "offer_type": {
+      "type": ["string", "null"],
+      "description": "Vendor’s deal structure.",
+      "enum": ["Unconditional", "Subject To Planning", "Option", "Joint Venture", "Both Uncon & STPP", "Company Acquisition", "Uncon with delayed Completion", "Unconditional with Overage", "TBC", null]
+    },
+
+    "footprint_acres": { "type": ["number", "string", "null"], "description": "Site area (acres)." },
+
+    "existing_private_units": { "type": ["integer", "string", "null"], "description": "Existing private residential units." },
+    "existing_affordable_units": { "type": ["integer", "string", "null"], "description": "Existing affordable units." },
+
+    "existing_commercial_gia_sqft": { "type": ["number", "string", "null"], "description": "Existing commercial GIA (sq ft)." },
+    "existing_commercial_nia_sqft": { "type": ["number", "string", "null"], "description": "Existing commercial NIA (sq ft)." },
+
+    "proposed_private_units": { "type": ["integer", "string", "null"], "description": "Proposed private units." },
+    "proposed_affordable_units": { "type": ["integer", "string", "null"], "description": "Proposed affordable units." },
+
+    "proposed_resi_gia_sqft": { "type": ["number", "string", "null"], "description": "Proposed residential GIA (sq ft)." },
+    "proposed_resi_nia_sqft": { "type": ["number", "string", "null"], "description": "Proposed residential NIA (sq ft)." },
+
+    "proposed_commercial_gia_sqft": { "type": ["number", "string", "null"], "description": "Proposed commercial GIA (sq ft)." },
+    "proposed_commercial_nia_sqft": { "type": ["number", "string", "null"], "description": "Proposed commercial NIA (sq ft)." },
+
+    "existing_resi_gia_sqft": { "type": ["number", "string", "null"], "description": "Existing residential GIA (sq ft)." },
+    "existing_resi_nia_sqft": { "type": ["number", "string", "null"], "description": "Existing residential NIA (sq ft)." },
+
+    "price": { "type": ["string", "null"], "description": "Price/guide string. May be 'Price on Application', 'Offers invited', 'Guide £…', or 'DELETE' to remove incorrect current value." },
+    "rough_cut_per_sqft": { "type": ["number", "string", "null"], "description": "Derived £/sq ft if available." },
+
+    "agent": { "type": ["string", "null"], "description": "Individual agent name." },
+    "agent_company": { "type": ["string", "null"], "description": "Agent/auctioneer firm." },
+
+    "auction": {
+      "type": ["string", "null"],
+      "description": "Auction flag.",
+      "enum": ["Yes", "No", "TBC", null]
+    },
+    "auction_date": { "type": ["string", "null"], "description": "Auction date (ISO or UK-readable)." },
+    "auction_lot_number": { "type": ["string", "null"], "description": "Auction lot reference." },
+
+    "lpa": { "type": ["string", "null"], "description": "Local Planning Authority." },
+
+    "epc_grade": { "type": ["string", "null"], "description": "EPC letter grade (e.g., A–G)." },
+    "epc_score": { "type": ["number", "string", "null"], "description": "EPC numeric score if stated." },
+
+    "council_charity_disposal": {
+      "type": ["string", "null"],
+      "description": "Whether disposal by council/charity.",
+      "enum": ["Yes", "No", "TBC", null]
+    },
+    "receivership": {
+      "type": ["string", "null"],
+      "description": "Whether the asset is in receivership.",
+      "enum": ["Yes", "No", "TBC", null]
+    }
+  }
+}
