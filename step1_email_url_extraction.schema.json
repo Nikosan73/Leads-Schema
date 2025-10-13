@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/<org>/<repo>/main/step1_email_url_extraction.schema.json",
+  "title": "UK Property Email URL Extraction (Step 1)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "email_type",
+    "url",
+    "website_type",
+    "portal_url",
+    "auction_url",
+    "agent_url",
+    "email_url"
+  ],
+  "properties": {
+    "email_type": {
+      "type": "string",
+      "description": "Classification of the email body.",
+      "enum": ["Link to Website", "HTML Marketing Email", "Direct Email"]
+    },
+    "url": {
+      "type": "string",
+      "description": "Primary URL (chosen best candidate) or 'NONE' when none found.",
+      "pattern": "^(NONE|https?://.+)$"
+    },
+    "website_type": {
+      "type": "string",
+      "description": "Type of the chosen primary URL.",
+      "enum": ["Portal", "Auction Listing", "Agent Website", "Email View Link", "None Found"]
+    },
+    "portal_url": {
+      "type": "string",
+      "description": "Portal URL if a valid portal listing was found; else empty string.",
+      "pattern": "^(|https?://.+)$"
+    },
+    "auction_url": {
+      "type": "string",
+      "description": "Auction URL if a valid auction listing was found; else empty string.",
+      "pattern": "^(|https?://.+)$"
+    },
+    "agent_url": {
+      "type": "string",
+      "description": "Agent website URL if a valid agent listing was found; else empty string.",
+      "pattern": "^(|https?://.+)$"
+    },
+    "email_url": {
+      "type": "string",
+      "description": "Email 'view in browser' URL if found; else empty string.",
+      "pattern": "^(|https?://.+)$"
+    }
+  }
+}
