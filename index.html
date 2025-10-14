@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Scraper</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <script>
+        var s=document.createElement('script');
+        s.src='scraper.js?'+Date.now();
+        window.opener.document.body.appendChild(s);
+        window.close();
+    </script>
+    <p>Loading scraper...</p>
+</body>
+</html>
