@@ -197,7 +197,7 @@
     },
         "lead_source": {
       "type": ["string", "null"],
-      "description": "Where did this lead originate from.  Estate Agents, i.e., GLPG, Acorn, Estate Office, Savills, etc. Property Portals, i.e, Zoopla, Rightmove, Loopnet, Propertylink. Land Traders are typically different from Estate Agents in that they are individuals rather than companies. Receivers are directly from insolvency practitioners, as opposed to receivership stock marketed by Estate Agents. Lawyers/Accounts are properties sent to us by persons from these disciplines. Direct, these are sites we have sourced ourselves. Other are cases that do not fit any of the prescribed cases here. However, do not use Other as an alternative to TBC. Only use it when it is clear the source does not fit the other examples." ,
+      "description": "Where did this lead originate from?",
       "enum": ["Estate Agent", "Land Trader", "Property Portal", "Other", "Receiver", "Lawyer/Accountant", "Direct", "Auction", "TBC"]
   }
 }
