@@ -40,7 +40,8 @@
     "epc_grade",
     "epc_score",
     "council_charity_disposal",
-    "receivership"
+    "receivership",
+    "lead_source"
   ],
   "properties": {
     "street_1": {
@@ -193,6 +194,11 @@
       "type": ["string", "null"],
       "description": "Indicates if the property/asset is being sold by a receiver/administrator due to insolvency or financial distress. These are often motivated sales. Choose: 'Yes' (confirmed receivership sale, may mention 'LPA Receiver', 'Administrator', 'Insolvency'), 'No' (normal sale), 'TBC' (language suggests distressed sale but not confirmed). Use null if no indication either way.",
       "enum": ["Yes", "No", "TBC", null]
-    }
+    },
+        "lead_source": {
+      "type": ["string", "null"],
+      "description": "Where did this lead originate from.  Estate Agents, i.e., GLPG, Acorn, Estate Office, Savills, etc. Property Portals, i.e, Zoopla, Rightmove, Loopnet, Propertylink. Land Traders are typically different from Estate Agents in that they are individuals rather than companies. Receivers are directly from insolvency practitioners, as opposed to receivership stock marketed by Estate Agents. Lawyers/Accounts are properties sent to us by persons from these disciplines. Direct, these are sites we have sourced ourselves. Other are cases that do not fit any of the prescribed cases here. However, do not use Other as an alternative to TBC. Only use it when it is clear the source does not fit the other examples." ,
+      "enum": ["Estate Agent", "Land Trader", "Property Portal", "Other", "Receiver", "Lawyer/Accountant", "Direct", "Auction", "TBC"]
+]
   }
 }
