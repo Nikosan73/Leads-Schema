@@ -195,9 +195,10 @@
       "description": "Indicates if the property/asset is being sold by a receiver/administrator due to insolvency or financial distress. These are often motivated sales. Choose: 'Yes' (confirmed receivership sale, may mention 'LPA Receiver', 'Administrator', 'Insolvency'), 'No' (normal sale), 'TBC' (language suggests distressed sale but not confirmed). Use null if no indication either way.",
       "enum": ["Yes", "No", "TBC", null]
     },
-        "lead_source": {
+    "lead_source": {
       "type": ["string", "null"],
       "description": "Where did this lead originate from?",
-      "enum": ["Estate Agent", "Land Trader", "Property Portal", "Other", "Receiver", "Lawyer/Accountant", "Direct", "Auction", "TBC"]
+      "enum": ["Estate Agent", "Land Trader", "Property Portal", "Other", "Receiver", "Lawyer/Accountant", "Direct", "Auction", "TBC", null]
+    }
   }
 }
